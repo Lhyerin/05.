@@ -3,30 +3,27 @@
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
 int main(int argc, char** argv) {
-    int x,y; //두 개의 입력 정수 
-    char op; //연산자 문자 
-    int result;
-    printf("enter the calculation:");
-    scanf("%d %c %d",&x,&op,&y);
+    int answer = 59;
+    int trial=0;
+    int x;
     
-    switch(op){
-        case '+':
-		    result=x+y;
-		    break;
-        case '-':
-        	result=x-y;
-        	break;
-        case '/':
-        	result=x/y;
-        	break;
-        case '*':
-		    result=x*y;
-			break;	
-	} 
+    do
+    {
+    printf("Guess a Number:");     //입력해라 문구 출력
+	scanf("%d",&x);	 //입력을 받음
+	
+	if(x>answer)
+	    printf("HIGH\n");
+	else if(x<answer)
+	    printf("LOW\n");	 //입력숫자가 정답보다 큰지 작은지 출력	
+    trial++;	
+	}
+	while(x!=answer);
+	    ; //정답과 같은지 여부 판단 
+    printf("Congratuation\n");
+    printf("Number of trial =%i\n",trial);//시도 횟수 출력 
     
-    //연산자에 따라 결과갑을 계산 
     
-    printf("=%i\n",result);
     
 	return 0; 
 }

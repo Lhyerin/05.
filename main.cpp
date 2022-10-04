@@ -3,18 +3,32 @@
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
 int main(int argc, char** argv) {
-    int sum=0; 
-    int x;
-    int i;
+    int x,y; //두 개의 입력 정수 
+    char op; //연산자 문자 
+    int result;
+    printf("enter the calculation:");
+    scanf("%d %c %d",&x,&op,&y);
     
-	printf("정수를  입력:");
-    scanf("%d",&x);
+    switch(op){
+        case '+':
+		    result=x+y;
+		    break;
+        case '-':
+        	result=x-y;
+        	break;
+        case '/':
+        	result=x/y;
+        	break;
+        case '*':
+		    result=x*y;
+			break;	
+	} 
     
-    for (i=0;i<=x;i++)
-        sum=sum+i; 
+    //연산자에 따라 결과갑을 계산 
     
-    printf("%i",sum);
-     
+    printf("=%i\n",result);
+    
+	return 0; 
 }
 
 
